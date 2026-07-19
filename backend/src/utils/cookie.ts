@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 const baseOptions = {
   httpOnly: true, // not readable by document.cookie
-  sameSite: "lax" as const, // sent on same-site requests; blocks most CSRF
+  sameSite: isProd ? ("none" as const) : ("lax" as const), // sent on same-site requests; blocks most CSRF
   secure: isProd, // HTTPS-only in production (localhost is http, so off in dev)
   path: "/",
 };
