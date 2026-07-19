@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand-coloured scrollbar. Chrome/Edge/Safari use the ::-webkit rules; Firefox
+   uses scrollbar-color (thumb, then track). Colours are the primary coffee-brown
+   thumb on the cream page background. */
+@layer base {
+  html {
+    scrollbar-color: #6f4e37 #f5f1e8;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5f1e8;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6f4e37;
+    border-radius: 9999px;
+    /* Slim the thumb with a track-coloured border so it reads as a rounded pill. */
+    border: 2px solid #f5f1e8;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8b5e3c;
+  }
+}
